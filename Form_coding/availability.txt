@@ -1,0 +1,125 @@
+Dim rs As New ADODB.Recordset
+Dim rs1 As New ADODB.Recordset
+Dim cn As New ADODB.Connection
+Private Sub Command1_Click()
+rs.MoveFirst
+If Text1.Text = "AIHT" And Text2.Text = "CSE" Then
+rs.Fields(1).Value = rs.Fields(1).Value - 1
+GoTo x
+Else
+If Text1.Text = "AIHT" And Text2.Text = "ECE" Then
+rs.Fields(2).Value = rs.Fields(2).Value - 1
+GoTo x
+Else
+If Text1.Text = "AIHT" And Text2.Text = "MECH" Then
+rs.Fields(3).Value = rs.Fields(3).Value - 1
+Else
+If Text1.Text = "AIHT" And Text2.Text = "EEE" Then
+rs.Fields(4).Value = rs.Fields(4).Value - 1
+GoTo x
+Else
+If Text1.Text = "Harvard" And Text2.Text = "CSE" Then
+rs.Fields(1).Value = rs.Fields(1).Value - 1
+GoTo x
+Else
+If Text1.Text = "Harvard" And Text2.Text = "ECE" Then
+rs.Fields(2).Value = rs.Fields(2).Value - 1
+GoTo x
+Else
+If Text1.Text = "Harvard" And Text2.Text = "MECH" Then
+rs.Fields(3).Value = rs.Fields(3).Value - 1
+Else
+If Text1.Text = "Harvard" And Text2.Text = "EEE" Then
+rs.Fields(4).Value = rs.Fields(4).Value - 1
+GoTo x
+Else
+If Text1.Text = "Stanford" And Text2.Text = "CSE" Then
+rs.Fields(1).Value = rs.Fields(1).Value - 1
+GoTo x
+Else
+If Text1.Text = "Stanford" And Text2.Text = "ECE" Then
+rs.Fields(2).Value = rs.Fields(2).Value - 1
+GoTo x
+Else
+If Text1.Text = "Stanford" And Text2.Text = "MECH" Then
+rs.Fields(3).Value = rs.Fields(3).Value - 1
+Else
+If Text1.Text = "Stanford" And Text2.Text = "EEE" Then
+rs.Fields(4).Value = rs.Fields(4).Value - 1
+GoTo x
+Else
+If Text1.Text = "Carnegie" And Text2.Text = "CSE" Then
+rs.Fields(1).Value = rs.Fields(1).Value - 1
+GoTo x
+Else
+If Text1.Text = "Carnegie" And Text2.Text = "ECE" Then
+rs.Fields(2).Value = rs.Fields(2).Value - 1
+GoTo x
+Else
+If Text1.Text = "Carnegie" And Text2.Text = "MECH" Then
+rs.Fields(3).Value = rs.Fields(3).Value - 1
+Else
+If Text1.Text = "Carnegie" And Text2.Text = "EEE" Then
+rs.Fields(4).Value = rs.Fields(4).Value - 1
+GoTo x
+Else
+If Text1.Text = "Berkeley" And Text2.Text = "CSE" Then
+rs.Fields(1).Value = rs.Fields(1).Value - 1
+GoTo x
+Else
+If Text1.Text = "Berkeley" And Text2.Text = "ECE" Then
+rs.Fields(2).Value = rs.Fields(2).Value - 1
+GoTo x
+Else
+If Text1.Text = "Berkeley" And Text2.Text = "MECH" Then
+rs.Fields(3).Value = rs.Fields(3).Value - 1
+Else
+If Text1.Text = "Berkeley" And Text2.Text = "EEE" Then
+rs.Fields(4).Value = rs.Fields(4).Value - 1
+GoTo x
+
+Else
+If Text3.Text = 0 Then
+MsgBox "Course Unavailable"
+Else
+MsgBox "Unexpected Error"
+
+x:
+rs.Update
+
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+Form8.Hide
+Form2.Show
+End Sub
+
+Private Sub Form_Load()
+cn.Open "ocrs", "scott", "tiger"
+rs.Open "select * from avail", cn, adOpenDynamic, adLockOptimistic
+rs1.Open "select * from course ", cn, adOpenDynamic, adLockOptimistic
+
+rs1.MoveLast
+Text1.Text = rs1.Fields(0)
+Text2.Text = rs1.Fields(1)
+Text3.Text = rs1.Fields(3)
+End Sub
+

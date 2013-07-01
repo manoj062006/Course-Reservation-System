@@ -1,0 +1,37 @@
+Dim cn As New ADODB.Connection
+Dim rs As New ADODB.Recordset
+Dim rs1 As New ADODB.Recordset
+Dim roll As Integer
+
+
+Private Sub Command1_Click()
+rs.AddNew
+roll = roll + 1
+rs.Fields(0) = Text1.Text
+rs.Fields(1) = Text2.Text
+rs.Fields(2) = Text3.Text
+rs.Fields(3) = Text4.Text
+rs.Fields(4) = Text5.Text
+rs.Fields(5) = roll + rs.Fields(5).Value
+rs.Update
+rs1.AddNew
+rs1.Fields(0) = Text4.Text
+rs1.Fields(1) = Text5.Text
+rs1.Update
+
+MsgBox ("Registration Successful !!"), vbInformation
+Form1.Hide
+Form11.Show
+End Sub
+
+Private Sub Form_Load()
+cn.Open "ocrs", "scott", "tiger"
+rs.Open "select * from stud", cn, adOpenDynamic, adLockOptimistic
+rs1.Open "select * from login", cn, adOpenDynamic, adLockOptimistic
+
+MsgBox ("Connected to The Database")
+'If conn.State = 0 Then
+'conn.Open "new"
+'End If
+End Sub
+

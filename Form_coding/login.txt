@@ -1,0 +1,32 @@
+Dim rs As New ADODB.Recordset
+Dim cn As New ADODB.Connection
+Dim Msg As String
+Private Sub Command1_Click()
+
+Do Until rs.EOF
+
+If rs.Fields("login").Value = Text1.Text And rs.Fields("password").Value = Text2.Text Then
+MsgBox ("Login Successful !")
+Form10.Hide
+Form12.Show
+Exit Sub
+Else
+rs.MoveNext
+End If
+Loop
+Msg = MsgBox("Invalid password, try again!", vbOKCancel)
+rs.MoveFirst
+If (Msg = 1) Then
+Form10.Show
+Else
+End
+End If
+
+End Sub
+
+Private Sub Form_Load()
+
+cn.Open "ocrs", "scott", "tiger"
+rs.Open "select * from login", cn, adOpenDynamic, adLockOptimistic
+
+End Sub

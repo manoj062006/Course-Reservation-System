@@ -1,0 +1,18 @@
+Private Sub Option1_Click()
+Form2.Show
+End Sub
+
+Private Sub Option2_Click()
+Form4.Show
+Form2.Hide
+End Sub
+
+Private Sub Option3_Click()
+Form5.Show
+Form2.Hide
+End Sub
+
+Private Sub Option4_Click()
+Form3.Show
+Form2.Hide
+End Sub

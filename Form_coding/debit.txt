@@ -1,0 +1,18 @@
+Private Sub Command1_Click()
+MsgBox ("Hot Payment Successful")
+Form9.Show
+Form5.Hide
+End Sub
+
+Private Sub Command2_Click()
+Form2.Show
+Form5.Hide
+End Sub
+
+Private Sub Form_Load()
+Combo9.AddItem ("BARCLAYS")
+Combo9.AddItem ("Royal Bank of Scotland")
+Combo9.AddItem ("Swiss Bank")
+Combo9.AddItem ("CITI Bank")
+Combo9.AddItem ("Deutsche Bank")
+End Sub

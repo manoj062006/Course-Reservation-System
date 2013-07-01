@@ -1,0 +1,5 @@
+Private Sub Command1_Click()
+Form10.Show
+Form11.Hide
+End Sub
+

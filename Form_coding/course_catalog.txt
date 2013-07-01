@@ -1,0 +1,40 @@
+
+Private Sub Command1_Click()
+Form7.Show
+Form12.Hide
+End Sub
+
+Private Sub Option1_Click()
+If Option1.Enabled = True Then
+Text2.Text = "Computer Science and Engineering: In this course student will get to learrn about computer....."
+End If
+End Sub
+
+Private Sub Option2_Click()
+
+If Option2.Enabled = True Then
+Text2.Text = "Electronics and Communication Engineering:In this course student will get to learrn about Electronics....."
+
+End If
+End Sub
+
+Private Sub Option3_Click()
+
+If Option3.Enabled = True Then
+Text2.Text = "Electrical and Electronics Engineering:In this course student will get to learrn about Electrical....."
+End If
+End Sub
+
+Private Sub Option4_Click()
+
+If Option4.Enabled = True Then
+Text2.Text = "Electronics and Instrumentation Engineering: In this course student will get to learrn about Instrumentation....."
+End If
+End Sub
+
+Private Sub Option5_Click()
+
+If Option5.Enabled = True Then
+Text2.Text = "Mechanical Engineering : In this course student will get to learrn about Mechanical....."
+End If
+End Sub

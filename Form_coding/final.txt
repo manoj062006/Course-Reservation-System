@@ -1,0 +1,27 @@
+Dim rs As New ADODB.Recordset
+Dim rs1 As New ADODB.Recordset
+Dim cn As New ADODB.Connection
+
+Private Sub Command1_Click(Index As Integer)
+Form9.Hide
+End Sub
+
+Private Sub Form_Load()
+cn.Open "ocrs", "scott", "tiger"
+rs.Open "select * from stud order by rollno", cn, adOpenDynamic, adLockOptimistic
+rs1.Open "select * from course order by cid", cn, adOpenDynamic, adLockOptimistic
+
+
+rs.MoveLast
+  Text1.Text = rs.Fields(0)
+  Text2.Text = rs.Fields(1)
+  Text5.Text = rs.Fields(5)
+rs1.MoveFirst
+  Text3.Text = rs1.Fields(0)
+  Text4.Text = rs1.Fields(1)
+  
+
+ 
+
+End Sub
+

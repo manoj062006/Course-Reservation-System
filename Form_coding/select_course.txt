@@ -1,0 +1,115 @@
+Dim rs As New ADODB.Recordset
+Dim rs1 As New ADODB.Recordset
+Dim cn As New ADODB.Connection
+Dim cid As Integer
+
+Private Sub Command1_Click()
+rs.AddNew
+rs.MoveFirst
+cid = cid + 1
+rs.Fields(0) = Combo4.Text
+rs.Fields(1) = Combo5.Text
+rs.Fields(2) = cid
+If Combo4.Text = "AIHT" And Combo5.Text = "CSE" Then
+rs.Fields(3) = rs1.Fields(1).Value
+Else
+If Combo4.Text = "AIHT" And Combo5.Text = "ECE" Then
+rs.Fields(3) = rs1.Fields(2).Value
+Else
+If Combo4.Text = "AIHT" And Combo5.Text = "MECH" Then
+rs.Fields(3) = rs1.Fields(3).Value
+Else
+If Combo4.Text = "AIHT" And Combo5.Text = "EEE" Then
+rs.Fields(3) = rs1.Fields(4).Value
+Else
+If Combo4.Text = "Harvard" And Combo5.Text = "CSE" Then
+rs.Fields(3) = rs1.Fields(1).Value
+Else
+If Combo4.Text = "Harvard" And Combo5.Text = "ECE" Then
+rs.Fields(3) = rs1.Fields(2).Value
+Else
+If Combo4.Text = "Harvard" And Combo5.Text = "MECH" Then
+rs.Fields(3) = rs1.Fields(3).Value
+Else
+If Combo4.Text = "Harvard" And Combo5.Text = "EEE" Then
+rs.Fields(3) = rs1.Fields(4).Value
+Else
+If Combo4.Text = "Stanford" And Combo5.Text = "CSE" Then
+rs.Fields(3) = rs1.Fields(1).Value
+Else
+If Combo4.Text = "Stanford" And Combo5.Text = "ECE" Then
+rs.Fields(3) = rs1.Fields(2).Value
+Else
+If Combo4.Text = "Stanford" And Combo5.Text = "MECH" Then
+rs.Fields(3) = rs1.Fields(3).Value
+Else
+If Combo4.Text = "Stanford" And Combo5.Text = "EEE" Then
+rs.Fields(3) = rs1.Fields(4).Value
+Else
+If Combo4.Text = "Carnegie" And Combo5.Text = "CSE" Then
+rs.Fields(3) = rs1.Fields(1).Value
+Else
+If Combo4.Text = "Carnegie" And Combo5.Text = "ECE" Then
+rs.Fields(3) = rs1.Fields(2).Value
+Else
+If Combo4.Text = "Carnegie" And Combo5.Text = "MECH" Then
+rs.Fields(3) = rs1.Fields(3).Value
+Else
+If Combo4.Text = "Carnegie" And Combo5.Text = "EEE" Then
+rs.Fields(3) = rs1.Fields(4).Value
+Else
+If Combo4.Text = "Berkeley" And Combo5.Text = "CSE" Then
+rs.Fields(3) = rs1.Fields(1).Value
+Else
+If Combo4.Text = "Berkeley" And Combo5.Text = "ECE" Then
+rs.Fields(3) = rs1.Fields(2).Value
+Else
+If Combo4.Text = "Berkeley" And Combo5.Text = "MECH" Then
+rs.Fields(3) = rs1.Fields(3).Value
+Else
+If Combo4.Text = "Berkeley" And Combo5.Text = "EEE" Then
+rs.Fields(3) = rs1.Fields(4).Value
+Else: MsgBox "Invalid Selection"
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+End If
+rs.Update
+MsgBox ("Course Available !")
+Form8.Show
+Form7.Hide
+
+
+End Sub
+
+Private Sub Form_Load()
+cn.Open "ocrs", "scott", "tiger"
+rs.Open "select * from course", cn, adOpenDynamic, adLockOptimistic
+rs1.Open "select * from avail", cn, adOpenDynamic, adLockOptimistic
+
+Combo4.AddItem ("AIHT")
+Combo4.AddItem ("Harvard")
+Combo4.AddItem ("Stanford")
+Combo4.AddItem ("Carnegie")
+Combo4.AddItem ("Berkeley")
+Combo5.AddItem ("CSE")
+Combo5.AddItem ("ECE")
+Combo5.AddItem ("MECH")
+Combo5.AddItem ("EEE")
+End Sub
